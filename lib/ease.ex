@@ -58,9 +58,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_quad)
-      [1.0, 1.1111111111111112, 1.4444444444444444, 2.0,
-       2.7777777777777777, 3.777777777777778, 5.0, 6.444444444444445,
-       8.11111111111111, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.111, 1.444, 2.0, 2.778, 3.778, 5.0, 6.444, 8.111, 10.0]
   """
   @spec ease_in_quad(number, number, number, number) :: number
   def ease_in_quad(current_time, start_value, change_in_value, duration)
@@ -78,9 +77,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_out_quad)
-      [1.0, 0.8888888888888888, 0.5555555555555556, 0.0,
-       -0.7777777777777777, -1.7777777777777781, -3.0, -4.444444444444445,
-       -6.111111111111111, -8.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 0.889, 0.556, 0.0, -0.778, -1.778, -3.0, -4.444, -6.111, -8.0]
   """
   @spec ease_out_quad(number, number, number, number) :: number
   def ease_out_quad(current_time, start_value, change_in_value, duration)
@@ -98,9 +96,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_out_quad)
-      [1.0, 1.2222222222222223, 1.8888888888888888, 3.0, 4.555555555555555,
-       6.444444444444445, 7.999999999999999, 9.11111111111111,
-       9.777777777777779, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.222, 1.889, 3.0, 4.556, 6.444, 8.0, 9.111, 9.778, 10.0]
   """
   @spec ease_in_out_quad(number, number, number, number) :: number
   def ease_in_out_quad(current_time, start_value, change_in_value, duration)
@@ -124,9 +121,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_cubic)
-      [1.0, 1.0123456790123457, 1.0987654320987654, 1.3333333333333333,
-       1.7901234567901234, 2.54320987654321, 3.666666666666666,
-       5.234567901234568, 7.320987654320986, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.012, 1.099, 1.333, 1.79, 2.543, 3.667, 5.235, 7.321, 10.0]
   """
   @spec ease_in_cubic(number, number, number, number) :: number
   def ease_in_cubic(current_time, start_value, change_in_value, duration)
@@ -143,9 +139,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_out_cubic)
-      [1.0, 3.6790123456790136, 5.765432098765432, 7.333333333333332,
-       8.45679012345679, 9.209876543209877, 9.666666666666666,
-       9.901234567901234, 9.987654320987655, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 3.679, 5.765, 7.333, 8.457, 9.21, 9.667, 9.901, 9.988, 10.0]
   """
   @spec ease_out_cubic(number, number, number, number) :: number
   def ease_out_cubic(current_time, start_value, change_in_value, duration)
@@ -163,9 +158,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_out_cubic)
-      [1.0, 1.0493827160493827, 1.3950617283950617, 2.333333333333333,
-       4.160493827160494, 6.839506172839507, 8.666666666666668,
-       9.604938271604938, 9.950617283950617, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.049, 1.395, 2.333, 4.16, 6.84, 8.667, 9.605, 9.951, 10.0]
   """
   @spec ease_in_out_cubic(number, number, number, number) :: number
   def ease_in_out_cubic(current_time, start_value, change_in_value, duration)
@@ -189,9 +183,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_quartic)
-      [1.0, 1.0013717421124828, 1.0219478737997256, 1.1111111111111112,
-       1.3511659807956105, 1.8573388203017833, 2.7777777777777777,
-       4.293552812071331, 6.6186556927297655, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.001, 1.022, 1.111, 1.351, 1.857, 2.778, 4.294, 6.619, 10.0]
   """
   @spec ease_in_quartic(number, number, number, number) :: number
   def ease_in_quartic(current_time, start_value, change_in_value, duration)
@@ -209,9 +202,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_out_quartic)
-      [1.0, 4.3813443072702345, 6.706447187928669, 8.222222222222221,
-       9.142661179698218, 9.64883401920439, 9.88888888888889,
-       9.978052126200273, 9.998628257887518, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 4.381, 6.706, 8.222, 9.143, 9.649, 9.889, 9.978, 9.999, 10.0]
   """
   @spec ease_out_quartic(number, number, number, number) :: number
   def ease_out_quartic(current_time, start_value, change_in_value, duration)
@@ -229,9 +221,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_out_quartic)
-      [1.0, 1.010973936899863, 1.1755829903978052, 1.8888888888888888,
-       3.8093278463648828, 7.190672153635117, 9.11111111111111,
-       9.824417009602195, 9.989026063100138, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.011, 1.176, 1.889, 3.809, 7.191, 9.111, 9.824, 9.989, 10.0]
   """
   @spec ease_in_out_quartic(number, number, number, number) :: number
   def ease_in_out_quartic(current_time, start_value, change_in_value, duration)
@@ -255,9 +246,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_quintic)
-      [1.0, 1.000152415790276, 1.004877305288828, 1.037037037037037,
-       1.1560737692424934, 1.476299344612102, 2.1851851851851847,
-       3.5616521871665907, 5.994360615759791, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.0, 1.005, 1.037, 1.156, 1.476, 2.185, 3.562, 5.994, 10.0]
   """
   @spec ease_in_quintic(number, number, number, number) :: number
   def ease_in_quintic(current_time, start_value, change_in_value, duration)
@@ -275,9 +265,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_out_quintic)
-      [1.0, 5.005639384240209, 7.438347812833409, 8.814814814814813,
-       9.523700655387898, 9.843926230757507, 9.962962962962964,
-       9.995122694711172, 9.999847584209725, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 5.006, 7.438, 8.815, 9.524, 9.844, 9.963, 9.995, 10.0, 10.0]
   """
   @spec ease_out_quintic(number, number, number, number) :: number
   def ease_out_quintic(current_time, start_value, change_in_value, duration)
@@ -295,9 +284,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_out_quintic)
-      [1.0, 1.002438652644414, 1.0780368846212467, 1.5925925925925923,
-       3.4971803078798955, 7.502819692120104, 9.407407407407407,
-       9.921963115378754, 9.997561347355585, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.002, 1.078, 1.593, 3.497, 7.503, 9.407, 9.922, 9.998, 10.0]
   """
   @spec ease_in_out_quintic(number, number, number, number) :: number
   def ease_in_out_quintic(current_time, start_value, change_in_value, duration)
@@ -321,9 +309,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_sine)
-      [1.0, 1.1367302228901277, 1.5427664129268237, 2.205771365940052,
-       3.105600011929197, 4.214911512821145, 5.499999999999999,
-       6.9218187100689805, 8.437166400997626, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.137, 1.543, 2.206, 3.106, 4.215, 5.5, 6.922, 8.437, 10.0]
   """
   @spec ease_in_sine(number, number, number, number) :: number
   def ease_in_sine(current_time, start_value, change_in_value, duration)
@@ -340,9 +327,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_out_sine)
-      [1.0, 2.562833599002373, 4.078181289931019, 5.499999999999999,
-       6.785088487178854, 7.894399988070802, 8.794228634059948,
-       9.457233587073175, 9.863269777109872, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 2.563, 4.078, 5.5, 6.785, 7.894, 8.794, 9.457, 9.863, 10.0]
   """
   @spec ease_out_sine(number, number, number, number) :: number
   def ease_out_sine(current_time, start_value, change_in_value, duration)
@@ -359,9 +345,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_out_sine)
-      [1.0, 1.271383206463412, 2.0528000059645986, 3.2499999999999996,
-       4.718583200498813, 6.281416799501186, 7.749999999999999,
-       8.947199994035401, 9.728616793536588, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.271, 2.053, 3.25, 4.719, 6.281, 7.75, 8.947, 9.729, 10.0]
   """
   @spec ease_in_out_sine(number, number, number, number) :: number
   def ease_in_out_sine(current_time, start_value, change_in_value, duration)
@@ -378,9 +363,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_expo)
-      [1.0087890625, 1.0189854250977164, 1.041010786547598,
-       1.088588198820733, 1.1913610937745218, 1.4133628259525122,
-       1.8929130917321118, 2.928798961419414, 5.166436205292806, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.009, 1.019, 1.041, 1.089, 1.191, 1.413, 1.893, 2.929, 5.166, 10.0]
   """
   @spec ease_in_expo(number, number, number, number) :: number
   def ease_in_expo(current_time, start_value, change_in_value, duration)
@@ -397,9 +381,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_out_expo)
-      [1.0, 5.833563794707193, 8.071201038580586, 9.107086908267888,
-       9.586637174047487, 9.808638906225479, 9.911411801179266,
-       9.958989213452401, 9.981014574902284, 9.9912109375]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 5.834, 8.071, 9.107, 9.587, 9.809, 9.911, 9.959, 9.981, 9.991]
   """
   @spec ease_out_expo(number, number, number, number) :: number
   def ease_out_expo(current_time, start_value, change_in_value, duration)
@@ -416,9 +399,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_out_expo)
-      [1.00439453125, 1.0205053932737989, 1.0956805468872608,
-       1.4464565458660559, 3.083218102646403, 7.916781897353598,
-       9.553543454133944, 9.90431945311274, 9.9794946067262, 9.99560546875]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.004, 1.021, 1.096, 1.446, 3.083, 7.917, 9.554, 9.904, 9.979, 9.996]
   """
   @spec ease_in_out_expo(number, number, number, number) :: number
   def ease_in_out_expo(current_time, start_value, change_in_value, duration)
@@ -442,9 +424,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_circular)
-      [1.0, 1.0557280900008417, 1.2250356126078779, 1.5147186257614298,
-       1.9377422517014504, 2.5166852264521173, 3.291796067500631,
-       4.34314575050762, 5.876894374382339, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.056, 1.225, 1.515, 1.938, 2.517, 3.292, 4.343, 5.877, 10.0]
   """
   @spec ease_in_circular(number, number, number, number) :: number
   def ease_in_circular(current_time, start_value, change_in_value, duration)
@@ -462,9 +443,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_out_circular)
-      [1.0, 5.1231056256176615, 6.65685424949238, 7.708203932499368,
-       8.483314773547882, 9.06225774829855, 9.48528137423857,
-       9.774964387392123, 9.94427190999916, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 5.123, 6.657, 7.708, 8.483, 9.062, 9.485, 9.775, 9.944, 10.0]
   """
   @spec ease_out_circular(number, number, number, number) :: number
   def ease_out_circular(current_time, start_value, change_in_value, duration)
@@ -482,9 +462,8 @@ defmodule Ease do
   ## Examples
 
       iex> Ease.map(1..10, :ease_in_out_circular)
-      [1.0, 1.112517806303939, 1.4688711258507252, 2.1458980337503153,
-       3.4384471871911697, 7.561552812808831, 8.854101966249683,
-       9.531128874149275, 9.88748219369606, 10.0]
+      ...> |> Enum.map(&Float.round(&1, 3))
+      [1.0, 1.113, 1.469, 2.146, 3.438, 7.562, 8.854, 9.531, 9.887, 10.0]
   """
   @spec ease_in_out_circular(number, number, number, number) :: number
   def ease_in_out_circular(current_time, start_value, change_in_value, duration)
