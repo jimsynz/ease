@@ -2,14 +2,16 @@ defmodule Ease.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :ease,
-     description: description(),
-     version: "0.1.0",
-     elixir: "~> 1.3",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     package: package(),
-     deps: deps()]
+    [
+      app: :ease,
+      description: description(),
+      version: "0.2.0",
+      elixir: "~> 1.3",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      package: package(),
+      deps: deps()
+    ]
   end
 
   def description do
@@ -20,10 +22,10 @@ defmodule Ease.Mixfile do
 
   def package do
     [
-      maintainers: [ "James Harton <james@messagerocket.co>" ],
-      licenses: [ "MIT" ],
+      maintainers: ["James Harton <james@automat.nz>"],
+      licenses: ["MIT"],
       links: %{
-        "Source" => "https://github.com/jamesotron/ease.ex"
+        "Source" => "https://gitlab.com/jimsy/ease.ex"
       }
     ]
   end
@@ -46,7 +48,10 @@ defmodule Ease.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:earmark, ">= 0.0.0", only: :dev},
+      {:credo, "~> 0.10", only: ~w(dev test)a, runtime: false},
+      {:inch_ex, "~> 1.0", only: ~w(dev test)a, runtime: false}
     ]
   end
 end

@@ -9,15 +9,29 @@ defmodule Ease do
   See [easings.net](http://easings.net) for nice graphs of each function.
   """
 
-  @type easing_function :: :linear | :ease_in_quad | :ease_out_quad |
-                           :ease_in_out_quad | :ease_in_cubic | :ease_out_cubic |
-                           :ease_in_out_cubic | :ease_in_quartic |
-                           :ease_out_quartic | :ease_in_out_quartic |
-                           :ease_in_quintic | :ease_out_quintic |
-                           :ease_in_out_quintic | :ease_in_sine | :ease_out_sine |
-                           :ease_in_out_sine | :ease_in_expo | :ease_out_expo |
-                           :ease_in_out_expo | :ease_in_circular |
-                           :ease_out_circular | :ease_in_out_circular
+  @type easing_function ::
+          :linear
+          | :ease_in_quad
+          | :ease_out_quad
+          | :ease_in_out_quad
+          | :ease_in_cubic
+          | :ease_out_cubic
+          | :ease_in_out_cubic
+          | :ease_in_quartic
+          | :ease_out_quartic
+          | :ease_in_out_quartic
+          | :ease_in_quintic
+          | :ease_out_quintic
+          | :ease_in_out_quintic
+          | :ease_in_sine
+          | :ease_out_sine
+          | :ease_in_out_sine
+          | :ease_in_expo
+          | :ease_out_expo
+          | :ease_in_out_expo
+          | :ease_in_circular
+          | :ease_out_circular
+          | :ease_in_out_circular
 
   @doc """
   No easing.
@@ -31,8 +45,8 @@ defmodule Ease do
   """
   @spec linear(number, number, number, number) :: number
   def linear(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     change_in_value * current_time / duration + start_value
   end
 
@@ -50,8 +64,8 @@ defmodule Ease do
   """
   @spec ease_in_quad(number, number, number, number) :: number
   def ease_in_quad(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / duration
     change_in_value * pow(current_time, 2) + start_value
   end
@@ -70,8 +84,8 @@ defmodule Ease do
   """
   @spec ease_out_quad(number, number, number, number) :: number
   def ease_out_quad(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / duration
     -change_in_value * pow(current_time, 2) + start_value
   end
@@ -80,7 +94,6 @@ defmodule Ease do
   Quadratic ease-in-out.
 
   Accelleration from zero velocity to half-way, then decelleration to zero velocity.
-
 
   ## Examples
 
@@ -91,10 +104,11 @@ defmodule Ease do
   """
   @spec ease_in_out_quad(number, number, number, number) :: number
   def ease_in_out_quad(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / (duration / 2)
-    if (current_time < 1) do
+
+    if current_time < 1 do
       change_in_value / 2 * pow(current_time, 2) + start_value
     else
       current_time = current_time - 1
@@ -116,8 +130,8 @@ defmodule Ease do
   """
   @spec ease_in_cubic(number, number, number, number) :: number
   def ease_in_cubic(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / duration
     change_in_value * pow(current_time, 3) + start_value
   end
@@ -135,9 +149,9 @@ defmodule Ease do
   """
   @spec ease_out_cubic(number, number, number, number) :: number
   def ease_out_cubic(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
-    current_time = (current_time / duration - 1)
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
+    current_time = current_time / duration - 1
     change_in_value * (pow(current_time, 3) + 1) + start_value
   end
 
@@ -155,10 +169,11 @@ defmodule Ease do
   """
   @spec ease_in_out_cubic(number, number, number, number) :: number
   def ease_in_out_cubic(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / (duration / 2)
-    if (current_time < 1) do
+
+    if current_time < 1 do
       change_in_value / 2 * pow(current_time, 3) + start_value
     else
       current_time = current_time - 2
@@ -180,8 +195,8 @@ defmodule Ease do
   """
   @spec ease_in_quartic(number, number, number, number) :: number
   def ease_in_quartic(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / duration
     change_in_value * pow(current_time, 4) + start_value
   end
@@ -200,9 +215,9 @@ defmodule Ease do
   """
   @spec ease_out_quartic(number, number, number, number) :: number
   def ease_out_quartic(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
-    current_time = (current_time / duration) - 1
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
+    current_time = current_time / duration - 1
     -change_in_value * (pow(current_time, 4) - 1) + start_value
   end
 
@@ -220,10 +235,11 @@ defmodule Ease do
   """
   @spec ease_in_out_quartic(number, number, number, number) :: number
   def ease_in_out_quartic(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / (duration / 2)
-    if (current_time < 1) do
+
+    if current_time < 1 do
       change_in_value / 2 * pow(current_time, 4) + start_value
     else
       current_time = current_time - 2
@@ -245,8 +261,8 @@ defmodule Ease do
   """
   @spec ease_in_quintic(number, number, number, number) :: number
   def ease_in_quintic(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / duration
     change_in_value * pow(current_time, 5) + start_value
   end
@@ -265,9 +281,9 @@ defmodule Ease do
   """
   @spec ease_out_quintic(number, number, number, number) :: number
   def ease_out_quintic(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
-    current_time = (current_time / duration) - 1
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
+    current_time = current_time / duration - 1
     change_in_value * (pow(current_time, 5) + 1) + start_value
   end
 
@@ -285,10 +301,11 @@ defmodule Ease do
   """
   @spec ease_in_out_quintic(number, number, number, number) :: number
   def ease_in_out_quintic(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / (duration / 2)
-    if (current_time < 1) do
+
+    if current_time < 1 do
       change_in_value / 2 * pow(current_time, 5) + start_value
     else
       current_time = current_time - 2
@@ -310,8 +327,8 @@ defmodule Ease do
   """
   @spec ease_in_sine(number, number, number, number) :: number
   def ease_in_sine(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     -change_in_value * cos(current_time / duration * pi() / 2) + change_in_value + start_value
   end
 
@@ -329,8 +346,8 @@ defmodule Ease do
   """
   @spec ease_out_sine(number, number, number, number) :: number
   def ease_out_sine(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     change_in_value * sin(current_time / duration * pi() / 2) + start_value
   end
 
@@ -348,8 +365,8 @@ defmodule Ease do
   """
   @spec ease_in_out_sine(number, number, number, number) :: number
   def ease_in_out_sine(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     -change_in_value / 2 * (cos(pi() * current_time / duration) - 1) + start_value
   end
 
@@ -367,8 +384,8 @@ defmodule Ease do
   """
   @spec ease_in_expo(number, number, number, number) :: number
   def ease_in_expo(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     change_in_value * pow(2, 10 * (current_time / duration - 1)) + start_value
   end
 
@@ -386,11 +403,10 @@ defmodule Ease do
   """
   @spec ease_out_expo(number, number, number, number) :: number
   def ease_out_expo(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     change_in_value * (0 - pow(2, -10 * current_time / duration) + 1) + start_value
   end
-
 
   @doc """
   Exponential ease-in-out.
@@ -406,10 +422,11 @@ defmodule Ease do
   """
   @spec ease_in_out_expo(number, number, number, number) :: number
   def ease_in_out_expo(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / (duration / 2)
-    if (current_time < 1) do
+
+    if current_time < 1 do
       change_in_value / 2 * pow(2, 10 * (current_time - 1)) + start_value
     else
       current_time = current_time - 1
@@ -431,8 +448,8 @@ defmodule Ease do
   """
   @spec ease_in_circular(number, number, number, number) :: number
   def ease_in_circular(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / duration
     -change_in_value * (sqrt(1 - pow(current_time, 2)) - 1) + start_value
   end
@@ -451,12 +468,11 @@ defmodule Ease do
   """
   @spec ease_out_circular(number, number, number, number) :: number
   def ease_out_circular(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
-    current_time = (current_time / duration - 1)
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
+    current_time = current_time / duration - 1
     change_in_value * sqrt(1 - pow(current_time, 2)) + start_value
   end
-
 
   @doc """
   Circular ease-in-out.
@@ -472,10 +488,11 @@ defmodule Ease do
   """
   @spec ease_in_out_circular(number, number, number, number) :: number
   def ease_in_out_circular(current_time, start_value, change_in_value, duration)
-  when is_number(current_time) and is_number(start_value)
-  and is_number(change_in_value) and is_number(duration) do
+      when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
+             is_number(duration) do
     current_time = current_time / (duration / 2)
-    if (current_time < 1) do
+
+    if current_time < 1 do
       -change_in_value / 2 * (sqrt(1 - pow(current_time, 2)) - 1) + start_value
     else
       current_time = current_time - 2
@@ -494,12 +511,12 @@ defmodule Ease do
       iex> Ease.map(1..10, :linear)
       [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
   """
-  @spec map(Enumerable.t, easing_function) :: Enumerable.t
+  @spec map(Enumerable.t(), easing_function) :: Enumerable.t()
   def map(enum, fun) do
-    start_value     = Enum.at(enum, 0)
-    last_value      = Enum.at(enum, -1)
+    start_value = Enum.at(enum, 0)
+    last_value = Enum.at(enum, -1)
     change_in_value = last_value - start_value
-    duration        = change_in_value
+    duration = change_in_value
 
     Enum.map(enum, &apply(Ease, fun, [&1 - start_value, start_value, change_in_value, duration]))
   end
