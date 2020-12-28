@@ -1,11 +1,13 @@
 defmodule Ease.Mixfile do
   use Mix.Project
 
+  @version "0.2.0"
+
   def project do
     [
       app: :ease,
       description: description(),
-      version: "0.2.0",
+      version: @version,
       elixir: "~> 1.3",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -22,7 +24,7 @@ defmodule Ease.Mixfile do
 
   def package do
     [
-      maintainers: ["James Harton <james@automat.nz>"],
+      maintainers: ["James Harton <james@harton.nz>"],
       licenses: ["MIT"],
       links: %{
         "Source" => "https://gitlab.com/jimsy/ease.ex"
@@ -50,8 +52,8 @@ defmodule Ease.Mixfile do
     [
       {:ex_doc, ">= 0.0.0", only: :dev},
       {:earmark, ">= 0.0.0", only: :dev},
-      {:credo, "~> 1.1", only: ~w(dev test)a, runtime: false},
-      {:inch_ex, "~> 2.0", only: ~w(dev test)a, runtime: false}
+      {:credo, "~> 1.1", only: ~w[dev test]a, runtime: false},
+      {:git_ops, "~> 2.3", only: ~w[dev test]a, runtime: false}
     ]
   end
 end
