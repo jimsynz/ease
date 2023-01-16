@@ -17,7 +17,7 @@ by adding `ease` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:ease, "~> 0.2.0"}]
+  [{:ease, "~> 1.0.0"}]
 end
 ```
 
