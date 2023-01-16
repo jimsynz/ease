@@ -1,5 +1,9 @@
 # Ease
 
+[![pipeline status](https://gitlab.com/jimsy/ease/badges/main/pipeline.svg)](https://gitlab.com/jimsy/ease/commits/main)
+[![Hex.pm](https://img.shields.io/hexpm/v/ease.svg)](https://hex.pm/packages/ease)
+[![Hippocratic License HL3-FULL](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-FULL&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/full.html)
+
 A generic implementation of standard easing functions for use in animation or
 robotics.
 
@@ -48,7 +52,14 @@ Plot the `{x, y}` positions for a circular ease-in:
      {3.291796067500631, 7}, {4.34314575050762, 8}, {5.876894374382339, 9},
      {10.0, 10}]
 
-# License
+## License
 
-Source code is licensed under the terms of the MIT license, the text of which
-is included in the `LICENSE` file in this distribution.
+This software is licensed under the terms of the
+[HL3-FULL](https://firstdonoharm.dev), see the `LICENSE.md` file included with
+this package for the terms.
+
+This license actively proscribes this software being used by and for some
+industries, countries and activities.  If your usage of this software doesn't
+comply with the terms of this license, then [contact me](mailto:james@harton.nz)
+with the details of your use-case to organise the purchase of a license - the
+cost of which may include a donation to a suitable charity or NGO.
