@@ -1,6 +1,6 @@
 # Ease
 
-[![pipeline status](https://gitlab.com/jimsy/ease/badges/main/pipeline.svg)](https://gitlab.com/jimsy/ease/commits/main)
+[![Build Status](https://drone.harton.dev/api/badges/james/ease/status.svg?ref=refs/heads/main)](https://drone.harton.dev/james/ease)
 [![Hex.pm](https://img.shields.io/hexpm/v/ease.svg)](https://hex.pm/packages/ease)
 [![Hippocratic License HL3-FULL](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-FULL&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/full.html)
 
@@ -28,13 +28,13 @@ Documentation can be found at [https://hexdocs.pm/ease](https://hexdocs.pm/ease)
 You can use an easing function directly from within your own loop, provided
 that you can supply the four arguments needed;
 
-* `current_time` - the elapsed "time" in the loop, ie if your `duration` is
+- `current_time` - the elapsed "time" in the loop, ie if your `duration` is
   ten, and you want to find the position for half way through the duration
   then you set it to `5`. Units are arbitrary (steps, ms, whatever).
-* `start_value` - the initial value or position at `current_time` of zero.
-* `change_in_value`- how much the `start_value` should be changed by the end
-   of the animation, ie the expected final value minus the `start_value`.
-* `duration` - the duration of the animation, in the same units as `current_time`.
+- `start_value` - the initial value or position at `current_time` of zero.
+- `change_in_value`- how much the `start_value` should be changed by the end
+  of the animation, ie the expected final value minus the `start_value`.
+- `duration` - the duration of the animation, in the same units as `current_time`.
 
 Given a quadratic ease-in of `1..10`, over 1 unit of time, where would we be
 when half-way through:
@@ -52,6 +52,12 @@ Plot the `{x, y}` positions for a circular ease-in:
      {3.291796067500631, 7}, {4.34314575050762, 8}, {5.876894374382339, 9},
      {10.0, 10}]
 
+## Github Mirror
+
+This repository is mirrored [on Github](https://github.com/jimsynz/ease)
+from it's primary location [on my Forejo instance](https://harton.dev/james/ease).
+Feel free to raise issues and open PRs on Github.
+
 ## License
 
 This software is licensed under the terms of the
@@ -59,7 +65,7 @@ This software is licensed under the terms of the
 this package for the terms.
 
 This license actively proscribes this software being used by and for some
-industries, countries and activities.  If your usage of this software doesn't
+industries, countries and activities. If your usage of this software doesn't
 comply with the terms of this license, then [contact me](mailto:james@harton.nz)
 with the details of your use-case to organise the purchase of a license - the
 cost of which may include a donation to a suitable charity or NGO.

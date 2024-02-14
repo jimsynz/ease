@@ -27,7 +27,7 @@ defmodule Ease.Mixfile do
       maintainers: ["James Harton <james@harton.nz>"],
       licenses: ["HL3-FULL"],
       links: %{
-        "Source" => "https://gitlab.com/jimsy/ease.ex"
+        "Source" => "https://harton.dev/james/ease"
       }
     ]
   end
@@ -36,7 +36,7 @@ defmodule Ease.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [extra_applications: [:logger]]
   end
 
   # Dependencies can be Hex packages:
@@ -50,9 +50,11 @@ defmodule Ease.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:ex_doc, "~> 0.30", only: ~w[dev test]a},
-      {:earmark, "~> 1.4", only: ~w[dev test]a},
       {:credo, "~> 1.6", only: ~w[dev test]a, runtime: false},
+      {:dialyxir, "~> 1.4", only: ~w[dev test]a, runtime: false},
+      {:doctor, "~> 0.21", only: ~w[dev test]a, runtime: false},
+      {:earmark, "~> 1.4", only: ~w[dev test]a, runtime: false},
+      {:ex_doc, "~> 0.30", only: ~w[dev test]a, runtime: false},
       {:git_ops, "~> 2.4", only: ~w[dev test]a, runtime: false}
     ]
   end
