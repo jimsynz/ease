@@ -12,16 +12,20 @@ animations) take a look at [easings.net](http://easings.net)
 
 ## Installation
 
-[Available in Hex](https://hex.pm/packages/ease), the package can be installed
+Ease is [available in Hex](https://hex.pm/packages/ease), the package can be installed
 by adding `ease` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:ease, "~> 1.0.0"}]
+  [
+    {:ease, "~> 1.0.0"}
+  ]
 end
 ```
 
-Documentation can be found at [https://hexdocs.pm/ease](https://hexdocs.pm/ease).
+Documentation for the latest release can be found on
+[HexDocs](https://hexdocs.pm/ease) and for the `main` branch on
+[docs.harton.nz](https://docs.harton.nz/james/ease).
 
 ## Usage
 

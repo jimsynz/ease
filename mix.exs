@@ -12,7 +12,11 @@ defmodule Ease.Mixfile do
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       package: package(),
-      deps: deps()
+      deps: deps(),
+      docs: [
+        main: "readme",
+        extras: ["README.md", "CHANGELOG.md"]
+      ]
     ]
   end
 
@@ -27,7 +31,10 @@ defmodule Ease.Mixfile do
       maintainers: ["James Harton <james@harton.nz>"],
       licenses: ["HL3-FULL"],
       links: %{
-        "Source" => "https://harton.dev/james/ease"
+        "Source" => "https://harton.dev/james/ease",
+        "GitHub" => "https://github.com/jimsynz/ease",
+        "Changelog" => "https://docs.harton.nz/james/ease/changelog.html",
+        "Sponsor" => "https://github.com/sponsors/jimsynz"
       }
     ]
   end
