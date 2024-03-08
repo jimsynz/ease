@@ -59,7 +59,7 @@ Plot the `{x, y}` positions for a circular ease-in:
 ## Github Mirror
 
 This repository is mirrored [on Github](https://github.com/jimsynz/ease)
-from it's primary location [on my Forejo instance](https://harton.dev/james/ease).
+from it's primary location [on my Forgejo instance](https://harton.dev/james/ease).
 Feel free to raise issues and open PRs on Github.
 
 ## License
