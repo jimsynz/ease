@@ -5,6 +5,14 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.0.2](https://harton.dev/james/ease/compare/v1.0.1...v1.0.2) (2025-12-12)
+
+
+### Fixes:
+
+- correct `ease_out_quad` formula
+
+
 ## [v1.0.1](https://harton.dev/james/ease/compare/v1.0.0...v1.0.1) (2024-02-22)
 
 
