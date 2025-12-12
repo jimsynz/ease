@@ -36,7 +36,7 @@ defmodule Ease do
   @doc """
   No easing.
 
-  Constant velocity with no accelleration.
+  Constant velocity with no acceleration.
 
   ## Examples
 
@@ -72,26 +72,26 @@ defmodule Ease do
   @doc """
   Quadratic ease-out.
 
-  Decelleration to zero velocity.
+  Deceleration to zero velocity.
 
   ## Examples
 
       iex> Ease.map(1..10, :ease_out_quad)
       ...> |> Enum.map(&Float.round(&1, 3))
-      [1.0, 0.889, 0.556, 0.0, -0.778, -1.778, -3.0, -4.444, -6.111, -8.0]
+      [1.0, 2.889, 4.556, 6.0, 7.222, 8.222, 9.0, 9.556, 9.889, 10.0]
   """
   @spec ease_out_quad(number, number, number, number) :: number
   def ease_out_quad(current_time, start_value, change_in_value, duration)
       when is_number(current_time) and is_number(start_value) and is_number(change_in_value) and
              is_number(duration) do
     current_time = current_time / duration
-    -change_in_value * pow(current_time, 2) + start_value
+    -change_in_value * current_time * (current_time - 2) + start_value
   end
 
   @doc """
   Quadratic ease-in-out.
 
-  Accelleration from zero velocity to half-way, then decelleration to zero velocity.
+  Acceleration from zero velocity to half-way, then deceleration to zero velocity.
 
   ## Examples
 
@@ -135,7 +135,7 @@ defmodule Ease do
   @doc """
   Cubic ease-out.
 
-  Decelleration to zero velocity.
+  Deceleration to zero velocity.
   ## Examples
 
       iex> Ease.map(1..10, :ease_out_cubic)
@@ -153,7 +153,7 @@ defmodule Ease do
   @doc """
   Cubic ease-in-out.
 
-  Accelleration from zero velocity to half-way, then decelleration to zero velocity.
+  Acceleration from zero velocity to half-way, then deceleration to zero velocity.
 
   ## Examples
 
@@ -197,7 +197,7 @@ defmodule Ease do
   @doc """
   Quartic ease-out.
 
-  Decelleration to zero velocity.
+  Deceleration to zero velocity.
 
   ## Examples
 
@@ -216,7 +216,7 @@ defmodule Ease do
   @doc """
   Quartic ease-in-out.
 
-  Accelleration from zero velocity to half-way, then decelleration to zero velocity.
+  Acceleration from zero velocity to half-way, then deceleration to zero velocity.
 
   ## Examples
 
@@ -260,7 +260,7 @@ defmodule Ease do
   @doc """
   Quintic ease-out.
 
-  Decelleration to zero velocity.
+  Deceleration to zero velocity.
 
   ## Examples
 
@@ -279,7 +279,7 @@ defmodule Ease do
   @doc """
   Quintic ease-in-out.
 
-  Accelleration from zero velocity to half-way, then decelleration to zero velocity.
+  Acceleration from zero velocity to half-way, then deceleration to zero velocity.
 
   ## Examples
 
@@ -322,7 +322,7 @@ defmodule Ease do
   @doc """
   Sinusoidal ease-out.
 
-  Decelleration to zero velocity.
+  Deceleration to zero velocity.
 
   ## Examples
 
@@ -340,7 +340,7 @@ defmodule Ease do
   @doc """
   Sinusoidal ease-in-out.
 
-  Accelleration from zero velocity to half-way, then decelleration to zero velocity.
+  Acceleration from zero velocity to half-way, then deceleration to zero velocity.
 
   ## Examples
 
@@ -376,7 +376,7 @@ defmodule Ease do
   @doc """
   Exponential ease-out.
 
-  Decelleration to zero velocity.
+  Deceleration to zero velocity.
 
   ## Examples
 
@@ -394,7 +394,7 @@ defmodule Ease do
   @doc """
   Exponential ease-in-out.
 
-  Accelleration from zero velocity to half-way, then decelleration to zero velocity.
+  Acceleration from zero velocity to half-way, then deceleration to zero velocity.
 
   ## Examples
 
@@ -438,7 +438,7 @@ defmodule Ease do
   @doc """
   Circular ease-out.
 
-  Decelleration to zero velocity.
+  Deceleration to zero velocity.
 
   ## Examples
 
@@ -457,7 +457,7 @@ defmodule Ease do
   @doc """
   Circular ease-in-out.
 
-  Accelleration from zero velocity to half-way, then decelleration to zero velocity.
+  Acceleration from zero velocity to half-way, then deceleration to zero velocity.
 
   ## Examples
 
