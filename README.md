@@ -1,6 +1,5 @@
 # Ease
 
-[![Build Status](https://drone.harton.dev/api/badges/james/ease/status.svg?ref=refs/heads/main)](https://drone.harton.dev/james/ease)
 [![Hex.pm](https://img.shields.io/hexpm/v/ease.svg)](https://hex.pm/packages/ease)
 [![Hippocratic License HL3-FULL](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-FULL&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/full.html)
 
@@ -24,8 +23,7 @@ end
 ```
 
 Documentation for the latest release can be found on
-[HexDocs](https://hexdocs.pm/ease) and for the `main` branch on
-[docs.harton.nz](https://docs.harton.nz/james/ease).
+[HexDocs](https://hexdocs.pm/ease).
 
 ## Usage
 
